@@ -1,0 +1,138 @@
+.flow {
+  background-color: var(--color-bg);
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.steps {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.step {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  background-color: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-xl);
+  transition: var(--transition);
+  position: relative;
+}
+
+.step:hover {
+  transform: translateX(8px) scale(1.01);
+  box-shadow: 0 12px 32px var(--color-shadow);
+  border-color: var(--color-border-hover);
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px var(--color-shadow-glow);
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.stepDescription {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .step {
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+  }
+  
+  .stepNumber {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+  
+  .stepTitle {
+    font-size: 1.2rem;
+  }
+  
+  .stepDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+  
+  .step:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .stepNumber {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+  
+  .stepContent {
+    width: 100%;
+  }
+  
+  .stepTitle {
+    font-size: 1.1rem;
+  }
+  
+  .stepDescription {
+    font-size: 0.95rem;
+  }
+}
+

@@ -1,0 +1,114 @@
+.value {
+  background-color: var(--color-surface);
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-large);
+  padding: var(--spacing-xl);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 12px 32px var(--color-shadow);
+  border-color: var(--color-border-hover);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.cardDescription {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .grid {
+    gap: var(--spacing-md);
+  }
+  
+  .card {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .card {
+    padding: var(--spacing-md);
+  }
+  
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+  
+  .cardDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
